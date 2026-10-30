@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Davi Andrade Batista — Desenvolvimento de sistemas, programação em Python, APIs e soluções digitais modernas.">
+  <meta name="author" content="Davi Andrade Batista">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Davi Andrade Batista | Portfólio</title>
+
+  <!-- Prevenção de FOUT (Flash of Unstyled Theme) -->
+  <script>
+    (function () {
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans (Tipografia Editorial Contemporânea) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Folha de Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+  <!-- Barra de progresso de rolagem -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <!-- Cabeçalho fixo com navegação -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+
+      <a href="#inicio" class="brand" aria-label="Davi Andrade Batista — voltar ao início">
+        <span class="brand-mark" aria-hidden="true">DA</span>
+        <span class="brand-text" aria-hidden="true"><span>DAVI</span><span>ANDRADE</span></span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#inicio" data-section="inicio">Início</a></li>
+          <li><a class="nav-link" href="#sobre" data-section="sobre">Sobre</a></li>
+          <li><a class="nav-link" href="#habilidades" data-section="habilidades">Habilidades</a></li>
+          <li><a class="nav-link" href="#projetos" data-section="projetos">Projetos</a></li>
+          <li><a class="nav-link" href="#contato" data-section="contato">Contato</a></li>
+        </ul>
+        <span class="nav-indicator" id="nav-indicator" aria-hidden="true"></span>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" data-magnetic aria-label="Alternar entre tema escuro e tema claro" title="Alternar tema">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contato" class="nav-cta" data-magnetic><span>Vamos conversar</span></a>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Menu em tela cheia (celular e tablet) -->
+  <div class="mobile-menu" id="mobile-menu" aria-label="Menu de navegação">
+    <nav aria-label="Navegação móvel">
+      <ul class="mobile-nav-list">
+        <li style="--i:0"><a class="mobile-nav-link" href="#inicio"><span class="mobile-nav-num">01</span>Início</a></li>
+        <li style="--i:1"><a class="mobile-nav-link" href="#sobre"><span class="mobile-nav-num">02</span>Sobre</a></li>
+        <li style="--i:2"><a class="mobile-nav-link" href="#habilidades"><span class="mobile-nav-num">03</span>Habilidades</a></li>
+        <li style="--i:3"><a class="mobile-nav-link" href="#projetos"><span class="mobile-nav-num">04</span>Projetos</a></li>
+        <li style="--i:4"><a class="mobile-nav-link" href="#contato"><span class="mobile-nav-num">05</span>Contato</a></li>
+      </ul>
+    </nav>
+    <a class="mobile-menu-foot" href="https://github.com/Davihubweb" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  </div>
+
+  <!-- Fundo Cósmico com Profundidade Sutil, Estrelas e Iluminação Ambiente -->
+  <div class="ambient-background" aria-hidden="true">
+    <canvas id="cosmos-bg-canvas"></canvas>
+    <div class="ambient-nebula nebula-left"></div>
+    <div class="ambient-nebula nebula-right"></div>
+    <div class="ambient-spotlight" id="ambient-spotlight"></div>
+    <div class="ambient-texture"></div>
+  </div>
+
+  <!-- Conteúdo Principal Contínuo em Página Única -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- 1. SEÇÃO HERO -->
+    <section class="hero-section" id="inicio" aria-labelledby="hero-name">
+      <div class="hero-container">
+        
+        <!-- Apresentação Tipográfica e Editorial -->
+        <div class="hero-editorial">
+          
+          <div class="hero-intro-wrapper anim-hero-item">
+            <span class="hero-greeting">Olá, meu nome é</span>
+            <h1 class="hero-name" id="hero-name">Davi Andrade Batista</h1>
+          </div>
+
+          <!-- Bloco de Apresentação com Fundo Suave e Translúcido -->
+          <div class="hero-summary-surface anim-hero-item">
+            <p class="hero-summary">
+              Gosto de aprender sobre programação e entender como transformar ideias em sistemas que realmente funcionam. Tenho explorado o desenvolvimento de APIs, a lógica de programação e a criação de experiências digitais, sempre buscando aprender coisas novas e melhorar minhas habilidades.
+            </p>
+          </div>
+
+          <!-- Links de Ação Tipográficos (Sem caixas, puramente tipográficos com sublinhado animado) -->
+          <div class="hero-actions-typographic anim-hero-item">
+            <a href="#projetos" class="action-link" id="btn-explore-projects">
+              <span class="action-text">Explorar Projetos</span>
+              <span class="action-arrow" aria-hidden="true">→</span>
+              <span class="action-line" aria-hidden="true"></span>
+            </a>
+
+            <a href="#contato" class="action-link" id="btn-contact-hero">
+              <span class="action-text">Entrar em Contato</span>
+              <span class="action-arrow arrow-down" aria-hidden="true">↓</span>
+              <span class="action-line" aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <!-- Áreas de Foco em Tipografia Discreta com Superfície Leve -->
+          <div class="hero-focus-tags anim-hero-item" aria-label="Áreas de estudo e desenvolvimento">
+            <span class="tag-item">Python & APIs</span>
+            <span class="tag-divider" aria-hidden="true">•</span>
+            <span class="tag-item">Desenvolvimento Web</span>
+            <span class="tag-divider" aria-hidden="true">•</span>
+            <span class="tag-item">Sistemas & Lógica</span>
+          </div>
+
+        </div>
+
+        <!-- Destaque Visual Principal: Buraco Negro com Rotação Ativa e Lente Gravitacional -->
+        <div class="hero-blackhole anim-hero-blackhole" id="hero-blackhole" aria-label="Simulação visual de um buraco negro com disco de acreção em rotação. Clique ou arraste para interagir.">
+          <div class="blackhole-container">
+            <canvas id="blackhole-canvas"></canvas>
+            <div class="blackhole-gravitational-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Indicador Sutil de Rolagem Contínua -->
+      <div class="scroll-cue" aria-hidden="true">
+        <a href="#sobre" class="scroll-cue-link" tabindex="-1">
+          <span class="cue-line"></span>
+          <span class="cue-label">ROLAR</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. SEÇÃO SOBRE MIM (FLUXO CONTÍNUO, SEM LINHAS DIVISÓRIAS) -->
+    <section class="content-section" id="sobre" aria-labelledby="sobre-title">
+      <div class="section-container">
+        
+        <div class="section-heading">
+          <span class="section-micro-tag scroll-reveal" data-reveal="left">Perfil</span>
+          <h2 class="section-title" id="sobre-title">Sobre mim</h2>
+        </div>
+
+        <div class="sobre-layout">
+          <div class="section-lead-surface scroll-reveal" data-reveal="up">
+            <p class="section-lead-text">
+              Tenho interesse em programação e gosto de aprender como o código pode ser usado para resolver problemas e criar soluções. Procuro desenvolver meus conhecimentos na prática, criando projetos e explorando novas tecnologias.
+            </p>
+          </div>
+
+          <div class="editorial-cards-grid">
+            <div class="editorial-card scroll-reveal">
+              <h3 class="card-title">O que gosto de desenvolver</h3>
+              <p class="card-text">Tenho interesse na criação de sistemas, desenvolvimento de APIs e programação, buscando entender como cada parte funciona e como elas podem trabalhar juntas.</p>
+            </div>
+
+            <div class="editorial-card scroll-reveal">
+              <h3 class="card-title">Como gosto de trabalhar</h3>
+              <p class="card-text">Procuro escrever códigos organizados, prestar atenção aos detalhes e criar projetos que funcionem bem em diferentes dispositivos. Estou sempre buscando aprender algo novo e melhorar minhas habilidades.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SEÇÃO DE HABILIDADES & TECNOLOGIAS -->
+    <section class="content-section" id="habilidades" aria-labelledby="habilidades-title">
+      <div class="section-container">
+        
+        <div class="section-heading">
+          <span class="section-micro-tag scroll-reveal" data-reveal="left">Conhecimentos</span>
+          <h2 class="section-title" id="habilidades-title">Habilidades & Tecnologias</h2>
+        </div>
+
+        <div class="skills-editorial-grid">
+          <div class="skill-box scroll-reveal">
+            <div class="skill-top">
+              <span class="skill-title">Python</span>
+              <span class="skill-tag">Back-end & Lógica</span>
+            </div>
+            <p class="skill-body">Desenvolvimento de scripts, automações e lógica computacional estruturada.</p>
+          </div>
+
+          <div class="skill-box scroll-reveal">
+            <div class="skill-top">
+              <span class="skill-title">APIs & Flask</span>
+              <span class="skill-tag">Integração</span>
+            </div>
+            <p class="skill-body">Criação e consumo de endpoints RESTful com validação e tráfego de dados estruturados.</p>
+          </div>
+
+          <div class="skill-box scroll-reveal">
+            <div class="skill-top">
+              <span class="skill-title">JavaScript</span>
+              <span class="skill-tag">Front-end</span>
+            </div>
+            <p class="skill-body">Interatividade moderna, manipulação do DOM nativo e integração com APIs.</p>
+          </div>
+
+          <div class="skill-box scroll-reveal">
+            <div class="skill-top">
+              <span class="skill-title">HTML5 & CSS3</span>
+              <span class="skill-tag">Estrutura & Estilo</span>
+            </div>
+            <p class="skill-body">Desenvolvimento semântico, acessibilidade, design responsivo e fluidez visual.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. SEÇÃO DE PROJETOS -->
+    <section class="content-section" id="projetos" aria-labelledby="projetos-title">
+      <div class="section-container">
+        
+        <div class="section-heading">
+          <span class="section-micro-tag scroll-reveal" data-reveal="left">Portfólio</span>
+          <h2 class="section-title" id="projetos-title">Projetos em Destaque</h2>
+        </div>
+
+        <div class="projects-editorial-grid">
+          <article class="project-panel scroll-reveal">
+            <div class="project-header">
+              <span class="project-tag">Python • Flask • REST</span>
+            </div>
+            <h3 class="project-heading">Desenvolvimento de APIs Robustas</h3>
+            <p class="project-body">Serviços back-end desenvolvidos com arquitetura clara, rotas organizadas, tratamento de exceções e processamento eficiente de requisições.</p>
+            <div class="project-action">
+              <a href="https://github.com/Davihubweb" target="_blank" rel="noopener noreferrer" class="action-link project-link-typographic">
+                <span class="action-text">Ver no GitHub</span>
+                <span class="action-arrow" aria-hidden="true">↗</span>
+                <span class="action-line" aria-hidden="true"></span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-panel scroll-reveal">
+            <div class="project-header">
+              <span class="project-tag">Interativo • Simulação</span>
+            </div>
+            <h3 class="project-heading">Simulador Inspirado em Aviação</h3>
+            <p class="project-body">Experiência interativa baseada em princípios de física e controles inspirados no Microsoft Flight Simulator, explorando cálculos e renderização fluida.</p>
+            <div class="project-action">
+              <a href="https://github.com/Davihubweb" target="_blank" rel="noopener noreferrer" class="action-link project-link-typographic">
+                <span class="action-text">Ver no GitHub</span>
+                <span class="action-arrow" aria-hidden="true">↗</span>
+                <span class="action-line" aria-hidden="true"></span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SEÇÃO DE CONTATO -->
+    <section class="content-section" id="contato" aria-labelledby="contato-title">
+      <div class="section-container">
+        
+        <div class="section-heading">
+          <span class="section-micro-tag scroll-reveal" data-reveal="left">Conexão</span>
+          <h2 class="section-title" id="contato-title">Contato</h2>
+        </div>
+
+        <div class="contact-block scroll-reveal" data-reveal="scale">
+          <p class="contact-text">
+            Estou sempre aberto a dialogar sobre novas ideias de tecnologia, desenvolvimento de sistemas e desafios de software.
+          </p>
+
+          <div class="contact-actions-wrap">
+            <a href="https://github.com/Davihubweb" target="_blank" rel="noopener noreferrer" class="action-link contact-link-typographic">
+              <span class="action-text">Conectar através do GitHub</span>
+              <span class="action-arrow" aria-hidden="true">↗</span>
+              <span class="action-line" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Minimalista Integrado -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-copy">Davi Andrade Batista &copy; 2026</p>
+      <a href="#inicio" class="back-to-top" aria-label="Voltar ao início">
+        <span>Voltar ao topo</span>
+        <span class="top-glyph" aria-hidden="true">↑</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Script Principal Consolidado -->
+  <script src="js/main.js"></script>
+</body>
+</html>
